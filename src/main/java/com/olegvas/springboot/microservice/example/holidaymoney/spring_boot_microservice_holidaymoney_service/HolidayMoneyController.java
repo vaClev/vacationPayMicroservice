@@ -19,4 +19,10 @@ public class HolidayMoneyController {
         return HolidayMoneyCalculator.getHolidayMoneyThisYear(payment,days);
     }
 
+    @CrossOrigin
+    @GetMapping("/holiday-money/year-payment/{payment}/firstDay/{firstDay}/lastDay/{lastDay}")
+    public double getHolidayMoneySum(@PathVariable String payment,
+                                     @PathVariable String firstDay, @PathVariable String lastDay) {
+        return HolidayMoneyCalculator.getHolidayMoneyThisYear(payment,firstDay,lastDay);
+    }
 }
