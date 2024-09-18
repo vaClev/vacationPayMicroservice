@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="microservice">
-        <h1>Test holiday payment</h1>
+        <h1>Test holiday payment v0.1</h1>
         <div class="dataLine">
             <p>Enter year payment:</p>
             <input type="number" id="payment"/>
@@ -23,6 +23,30 @@
             <p id="resultField"> test</p>
         </div>
     </div> 
+    <div class="microservice">
+        <h1>Test holiday payment v0.2</h1>
+        <div class="dataLine">
+            <p>Enter year payment:</p>
+            <input type="number" id="payment2"/>
+        </div>
+        <div class="dataLine">
+            <p>Enter first day of vacation:</p>
+            <input type="date" id="firstday"/>
+        </div>
+        <div class="dataLine">
+            <p>Enter last day of vacation:</p>
+            <input type="date" id="lastday"/>
+        </div>
+        <button class="requestButtonFromTo">send request to spring microservice: holidaymoney </button>
+        <div class="dataLine">
+            <p>Payment for vacation:</p>
+            <p id="resultField2"> test</p>
+        </div>
+    </div>
+    
+    
+
     <script src="js/holiday-money.js"></script>
+    <script src="js/holiday-money-from-to.js"></script>
 </body>
 </html>

@@ -3,6 +3,7 @@ package com.olegvas.springboot.microservice.example.holidaymoney.spring_boot_mic
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Calendar;
 
 public class HolidayMoneyCalculator {
@@ -36,9 +37,9 @@ public class HolidayMoneyCalculator {
         LocalDate holidayFirstDay;
         LocalDate holidayLastDay;
         try {
-            holidayFirstDay = LocalDate.parse(firstDay, DateTimeFormatter.BASIC_ISO_DATE);
-            holidayLastDay = LocalDate.parse(lastDay, DateTimeFormatter.BASIC_ISO_DATE);
-        } catch (DateTimeException e) {
+            holidayFirstDay = LocalDate.parse(firstDay, DateTimeFormatter.ISO_DATE);
+            holidayLastDay = LocalDate.parse(lastDay, DateTimeFormatter.ISO_DATE);
+        } catch (DateTimeParseException e) {
             System.out.println("ошибка в формате запроса, недопустимые символы: " + firstDay + " " + lastDay);
             return -1;
         }
