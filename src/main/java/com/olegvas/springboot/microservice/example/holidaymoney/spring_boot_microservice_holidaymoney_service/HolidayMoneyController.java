@@ -13,16 +13,16 @@ public class HolidayMoneyController {
     private Environment environment;
 
     @CrossOrigin
-    @GetMapping("/holiday-money/year-payment/{payment}/for/{days}")
-    public double getHolidayMoneySum(@PathVariable String payment,
+    @GetMapping("/holiday-money/averageSalary/{salary}/for/{days}")
+    public double getHolidayMoneySum(@PathVariable String salary,
                      @PathVariable String days) {
-        return HolidayMoneyCalculator.getHolidayMoneyThisYear(payment,days);
+        return new HolidayMoneyCalculator(salary).getHolidayMoney(days);
     }
 
     @CrossOrigin
-    @GetMapping("/holiday-money/year-payment/{payment}/firstDay/{firstDay}/lastDay/{lastDay}")
-    public double getHolidayMoneySum(@PathVariable String payment,
+    @GetMapping("/holiday-money/averageSalary/{salary}/firstDay/{firstDay}/lastDay/{lastDay}")
+    public double getHolidayMoneySum(@PathVariable String salary,
                                      @PathVariable String firstDay, @PathVariable String lastDay) {
-        return HolidayMoneyCalculator.getHolidayMoneyThisYear(payment,firstDay,lastDay);
+        return new HolidayMoneyCalculator(salary).getHolidayMoney(firstDay, lastDay);
     }
 }
